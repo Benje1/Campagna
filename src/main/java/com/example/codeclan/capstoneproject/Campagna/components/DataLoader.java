@@ -33,9 +33,11 @@ public class DataLoader implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) {
 
-        BandB bandB = new BandB("The Bee and Bear", "B&B@BeeBear.com", "+447769864725", "bb01.png", "bb01int.png");
+        BandB bandB = new BandB("The Bee and Bear", "B&B@BeeBear.com", "+4477", "bb01.png", "bb01int.png");
         Booking booking = new Booking(bandB, LocalDate.of(2022, 5, 20), LocalDate.of(2022, 5, 3), 2);
-        BandB marBanB = new BandB("Mar's Creepy Cottage", "TheCreepyCottage@MarCottage.com", "+447594364070", "bb04.jpeg", "bb04int.jpeg");
+        BandB marBanB = new BandB("Mar's Creepy Cottage", "TheCreepyCottage@MarCottage.com", "+4475", "bb04.jpeg", "bb04int.jpeg");
+        //Tribute to my wonderful little hamster who pass away.
+        BandB wilbursBorrow = new BandB("Wilbur's borrow", "theGentalmanHam@wilbur.com", "+4475", "wilbur.png", "wilbur2.png");
         bandBRepository.save(bandB);
         bookingRepository.save(booking);
         bandBRepository.save(marBanB);
