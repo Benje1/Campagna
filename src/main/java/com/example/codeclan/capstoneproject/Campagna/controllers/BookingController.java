@@ -6,7 +6,6 @@ import com.example.codeclan.capstoneproject.Campagna.repositories.BandBRepositor
 import com.example.codeclan.capstoneproject.Campagna.repositories.BookingRepository;
 import com.example.codeclan.capstoneproject.Campagna.twilio.TwilioMessagingService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -50,6 +49,7 @@ public class BookingController {
         Optional<BandB> bandb = bandBRepository.findById(booking.getBandb().getId());
         TwilioMessagingService messageService = new TwilioMessagingService();
         String message = String.format("Booking created.%n You have %s guests wanting to book from %s to %s.%n To confirm availability please go to - localhost:8080/bookings/%s/confirm %n If you have no availability please go to localhost:8080/bookings/%s/notavailable", booking.getNumberOfGuests(), booking.getStartDate(), booking.getEndDate(), booking.getId(), booking.getId());
+        //This is commented out as you need a Twilio account to be able to send the text
 //        messageService.send(ACCOUNT_SID, AUTH_TOKEN, bandb.get().getPhoneNumber(), message);
         return new ResponseEntity<>(booking, HttpStatus.CREATED);
     }
