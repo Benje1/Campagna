@@ -37,10 +37,11 @@ public class DataLoader implements ApplicationRunner {
         Booking booking = new Booking(bandB, LocalDate.of(2022, 5, 20), LocalDate.of(2022, 5, 3), 2);
         BandB marBanB = new BandB("Mar's Creepy Cottage", "TheCreepyCottage@MarCottage.com", "+4475", "bb04.jpeg", "bb04int.jpeg");
         //Tribute to my wonderful little hamster who passed away.
-        BandB wilbursBorrow = new BandB("Wilbur's borrow", "theGentalmanHam@wilbur.com", "+4475", "wilbur.png", "wilbur2.png");
+        BandB WilbursBurrow = new BandB("Wilbur's Burrow", "theGentlemanHam@wilbur.com", "+4475", "wilbur.png", "wilbur2.png");
         bandBRepository.save(bandB);
         bookingRepository.save(booking);
         bandBRepository.save(marBanB);
+        bandBRepository.save(WilbursBurrow);
 
         Farmer farmer1 = new Farmer(
                 "Nicholas Bigbelly",
